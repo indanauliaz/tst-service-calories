@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - database.default.hostname=db
+      - database.default.database=db_service_calories
+      - database.default.username=root
+      - database.default.password=root
+      - database.default.DBDriver=MySQLi
+      - CI_ENVIRONMENT=development
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: db_service_calories
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./db_service_calories.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3307:3306"
