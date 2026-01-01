@@ -18,11 +18,15 @@ services:
       - db
 
   db:
-    image: mysql:8.0
+    image: mariadb:10.6
     environment:
       MYSQL_DATABASE: db_service_calories
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - ./db_service_calories.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
-      - "3307:3306"
+      - "3309:3306"
+    deploy:
+      resources:
+        limits:
+          memory: 256M
