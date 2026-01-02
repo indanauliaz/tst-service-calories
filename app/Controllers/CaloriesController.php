@@ -10,9 +10,9 @@ class CaloriesController extends ResourceController
     public function index()
     {
         return $this->respond([
-            'status' => 'Service Nutrisi Ready!', 
-            'owner' => 'Kelompok Kita',
-            'message' => 'Silakan tembak endpoint /calculate untuk hitung kalori.'
+            'status' => 'Microservice Ready!', 
+            'owner' => 'Indi',
+            'message' => 'Alhamdulillah'
         ]);
     }
 
