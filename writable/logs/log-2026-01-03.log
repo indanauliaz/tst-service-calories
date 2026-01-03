@@ -1,0 +1,114 @@
+ERROR - 2026-01-03 05:30:50 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '
+                    food TEXT NOT NULL,
+                    calories INTEGER...' at line 2 in C:\xampp\htdocs\service-calories\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\service-calories\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE IF...', 0)
+#1 C:\xampp\htdocs\service-calories\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE IF...')
+#2 C:\xampp\htdocs\service-calories\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE IF...')
+#3 C:\xampp\htdocs\service-calories\app\Controllers\Home.php(16): CodeIgniter\Database\BaseConnection->query('CREATE TABLE IF...')
+#4 C:\xampp\htdocs\service-calories\system\CodeIgniter.php(933): App\Controllers\Home->setup()
+#5 C:\xampp\htdocs\service-calories\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\service-calories\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\service-calories\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\service-calories\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\service-calories\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 C:\xampp\htdocs\service-calories\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2026-01-03 05:30:50 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '
+                    food TEXT NOT NULL,
+                    calories INTEGER...' at line 2
+[Method: GET, Route: home/setup]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 APPPATH\Controllers\Home.php(16): CodeIgniter\Database\BaseConnection->query('CREATE TABLE IF NOT EXISTS ingredients (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    food TEXT NOT NULL,
+                    calories INTEGER NOT NULL
+                  );')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->setup()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\service-calories\\public\\index.php')
+CRITICAL - 2026-01-03 05:30:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '
+                    food TEXT NOT NULL,
+                    calories INTEGER...' at line 2
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE IF NOT EXISTS ingredients (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    food TEXT NOT NULL,
+                    calories INTEGER NOT NULL
+                  );')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE IF NOT EXISTS ingredients (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    food TEXT NOT NULL,
+                    calories INTEGER NOT NULL
+                  );')
+ 3 APPPATH\Controllers\Home.php(16): CodeIgniter\Database\BaseConnection->query('CREATE TABLE IF NOT EXISTS ingredients (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    food TEXT NOT NULL,
+                    calories INTEGER NOT NULL
+                  );')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->setup()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\service-calories\\public\\index.php')
+CRITICAL - 2026-01-03 05:30:50 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '
+                    food TEXT NOT NULL,
+                    calories INTEGER...' at line 2
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE IF NOT EXISTS ingredients (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    food TEXT NOT NULL,
+                    calories INTEGER NOT NULL
+                  );', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE IF NOT EXISTS ingredients (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    food TEXT NOT NULL,
+                    calories INTEGER NOT NULL
+                  );')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE IF NOT EXISTS ingredients (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    food TEXT NOT NULL,
+                    calories INTEGER NOT NULL
+                  );')
+ 4 APPPATH\Controllers\Home.php(16): CodeIgniter\Database\BaseConnection->query('CREATE TABLE IF NOT EXISTS ingredients (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    food TEXT NOT NULL,
+                    calories INTEGER NOT NULL
+                  );')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->setup()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\service-calories\\public\\index.php')
+CRITICAL - 2026-01-03 05:35:24 --> CodeIgniter\Exceptions\CriticalError: The required PHP extension "sqlite3" is not loaded. Install and enable it to use "SQLite3" driver.
+[Method: GET, Route: home/setup]
+in SYSTEMPATH\Database\Database.php on line 182.
+ 1 SYSTEMPATH\Database\Database.php(59): CodeIgniter\Database\Database->checkDbExtension('SQLite3')
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 APPPATH\Controllers\Home.php(14): CodeIgniter\Database\Config::connect()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->setup()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\service-calories\\public\\index.php')
+CRITICAL - 2026-01-03 05:39:59 --> ErrorException: Undefined variable $builder
+[Method: POST, Route: calculate]
+in APPPATH\Controllers\CaloriesController.php on line 38.
+ 1 APPPATH\Controllers\CaloriesController.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $builder', 'C:\\xampp\\htdocs\\service-calories\\app\\Controllers\\CaloriesController.php', 38)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CaloriesController->calculate()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CaloriesController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\service-calories\\public\\index.php')

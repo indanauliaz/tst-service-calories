@@ -17,7 +17,7 @@ class CaloriesController extends ResourceController
     }
 
     // Ini buat hitung kalori (POST /calculate)
-    public function create()
+    public function calculate()
     {
         $json = $this->request->getJSON();
         
@@ -31,19 +31,18 @@ class CaloriesController extends ResourceController
         $details = [];
 
         $db = \Config\Database::connect();
+        $builder = $db->table('ingredients');
 
         foreach ($items as $item) {
             $cleanItem = strtolower(trim($item));
             
-            // Query cari bahan (pake LIKE biar fleksibel)
-            $query = $db->query("SELECT * FROM ingredients WHERE food_key LIKE '%$cleanItem%' LIMIT 1");
-            $result = $query->getRowArray();
+            $result = $builder->like('food', $cleanItem)->get()->getRowArray();
 
             if ($result) {
                 $cal = floatval($result['calories']);
                 $totalCalories += $cal;
                 $details[] = [
-                    'food' => $result['food_key'],
+                    'food' => $result['food'],
                     'cal' => $cal
                 ];
             } else {
