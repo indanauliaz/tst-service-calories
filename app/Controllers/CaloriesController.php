@@ -19,8 +19,15 @@ class CaloriesController extends ResourceController
     // Ini buat hitung kalori (POST /calculate)
     public function calculate()
     {
-        $json = $this->request->getJSON();
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+        if ($_SERVER['REQUEST_METHOD'] == "OPTIONS") {
+            die();
+        }
         
+        $json = $this->request->getJSON();
+
         // Validasi input
         if (!$json || !isset($json->ingredients)) {
             return $this->fail("Mana data ingredients-nya bro?", 400);
@@ -59,5 +66,7 @@ class CaloriesController extends ResourceController
             'total_calories' => $totalCalories,
             'breakdown' => $details
         ]);
+
+        $json = $this->request->getJSON();
     }
 }
